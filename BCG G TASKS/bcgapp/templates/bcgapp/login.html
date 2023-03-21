@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>
+            ADMIN PAGE
+        </title>
+    </head>
+    <body>
+        <div>
+            <form method='POST'>
+                {% csrf_token %}
+                <div class="container-fluid"> 
+                    <div class="row">
+                        <div class="col-md-4">
+                <input type="text" id="login" name="uname" required class="form-control ">
+                <input type="text" id="password"  name="pwd" required class="form-control">
+                <input type="submit" value="login">
+                </div>
+                </div>
+                </div>
+           </form>
+        </div>
+    </body>
+</html>

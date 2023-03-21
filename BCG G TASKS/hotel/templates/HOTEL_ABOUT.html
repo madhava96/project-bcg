@@ -1,0 +1,279 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT</title>
+    <style>
+         *{
+    font-family: 'poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+        }
+        html{
+        font-size: 62.5%;
+        overflow-x: hidden;
+    }
+    .btn{
+        display:inline-block;
+        margin-top: 1rem;
+        padding: 1rem 3rem;
+        border-radius: .5rem;
+        background: var(--primary);
+        color: rgb(32, 2, 2);
+        font-size: 1.7rem;
+        cursor: pointer;
+    }
+    .btn:hover{
+        background: rgb(164, 164, 172);
+    }
+    
+    .header{
+        position: fixed;
+        top:0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background:#347deb;
+        box-shadow: black;
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        padding: 0.5rem 9%;
+    }
+    .header .navbar a{
+        font-size: 1.7rem;
+        color: black;
+        margin: 0 1rem;
+    }
+    .header .navbar a:hover{
+        color: white;
+    }
+    .header .navbar .btn{
+        margin-top: 0;
+        color: #eee;
+    }
+        
+        
+        
+        
+        section{
+            padding: 5rem 7%;
+        }
+        .availability form{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            background: #eee;
+            padding: 2rem;
+            border-radius: .5rem;
+            
+        }
+        .availability form .box{
+            flex:1 1 20rem;
+            
+        }
+        .availability form .box p{
+            font-size: 2rem;
+            color: rgb(18, 1, 1);
+            
+        }
+        .availability form .box .input{
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.8rem;
+            color: rgb(145, 137, 137);
+            margin: 1rem 0;
+            border-radius: .5rem;
+            
+        }
+
+        .logo{
+            position: fixed;
+            height: auto;
+            left: 0;
+            width: 50px;
+        }
+   
+
+        
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        
+        <img src="{% static "/images/LOGO1.png" %}" class="logo" ><i class="fas fa-hotel"></i>
+             <nav class="navbar">
+                <a href="file:///C:/Users/ok/Desktop/ziptak/New%20folder/HOTEL%20BOOKING.html">Home</a>
+                <a href="file:///C:/Users/ok/Desktop/ziptak/New%20folder/HOTEL%20ABOUT.html">About</a>
+                <a href="file:///C:/Users/ok/Desktop/ziptak/New%20folder/HOTEL%20ROOMS.html">Room</a>
+                <a href="gallery">Gallery</a>
+                <a href="#faq">FAQ</a>
+                <a href="#reservation" class="btn">Book now</a>
+            </nav>
+            <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROOMS</title>
+    <style>
+         *{
+    font-family: 'poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+        }
+        html{
+        font-size: 62.5%;
+        overflow-x: hidden;
+    }
+    body{background-image: url("about.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;}     
+    .btn{
+        display:inline-block;
+        margin-top: 1rem;
+        padding: 1rem 3rem;
+        border-radius: .5rem;
+        background: var(--primary);
+        color: rgb(32, 2, 2);
+        font-size: 1.7rem;
+        cursor: pointer;
+    }
+    .btn:hover{
+        background: rgb(164, 164, 172);
+    }
+    
+    .header{
+        position: fixed;
+        top:0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background:#347deb;
+        box-shadow: black;
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        padding: 0.5rem 9%;
+    }
+    .header .navbar a{
+        font-size: 1.7rem;
+        color: black;
+        margin: 0 1rem;
+    }
+    .header .navbar a:hover{
+        color: white;
+    }
+    .header .navbar .btn{
+        margin-top: 0;
+        color: #eee;
+    }
+        
+        
+        
+        
+        section{
+            padding: 5rem 7%;
+        }
+        .availability form{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            background: #eee;
+            padding: 2rem;
+            border-radius: .5rem;
+            
+        }
+        .availability form .box{
+            flex:1 1 20rem;
+            
+        }
+        .availability form .box p{
+            font-size: 2rem;
+            color: rgb(18, 1, 1);
+            
+        }
+        .availability form .box .input{
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.8rem;
+            color: rgb(145, 137, 137);
+            margin: 1rem 0;
+            border-radius: .5rem;
+            
+        }
+   
+    h1{
+        text-align: center;
+        text-decoration: underline;
+        font-size: 30px;
+    }
+    p{
+        font-size: 20px ;
+    }
+
+    .logo{
+            position: fixed;
+            height: auto;
+            left: 0;
+            width: 50px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="LOGO1.png" class="logo"><i class="fas fa-hotel"></i></a>
+            <nav class="navbar">
+                <a href="file:///C:/Users/ok/Desktop/ziptak/New%20folder/HOTEL%20BOOKING.html">Home</a>
+                <a href="file:///C:/Users/ok/Desktop/ziptak/New%20folder/HOTEL%20ABOUT.html">About</a>
+               
+                <a href="file:///C:/Users/ok/Desktop/ziptak/New%20folder/HOTEL%20ROOMS.html">Rooms</a>
+                
+                <a href="#reservation" class="btn">Book now</a>
+            </nav>
+            <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h1>WELCOME TO CICILY</h1>
+    <br>
+    <br>
+    
+    <p>Hotel management is a globally accepted professional career field and academic field of study.
+       Degree programs such as hospitality management studies, a business degree, and/or certification
+       programs formally prepare hotel managers for industry practice.Most hotel establishments consist
+       of a general manager who serves as the head executive (often referred to as the "hotel manager"),
+       department heads who oversee various departments within a hotel, middle managers, administrative staff,
+       and line-level supervisors. The organizational chart and volume of job positions and hierarchy varies by 
+       hotel size, function, and is often determined by hotel ownership and managing companies.</p>
+    </p
+
+    
+</body>
+</html>

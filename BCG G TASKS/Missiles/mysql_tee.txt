@@ -1,0 +1,11 @@
+mysql> create database deepthi;
+ERROR 1007 (HY000): Can't create database 'deepthi'; database exists
+mysql> create database miss;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use miss;
+Database changed
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> tee C:/Users/ok/Desktop/deeeeeee.txt;

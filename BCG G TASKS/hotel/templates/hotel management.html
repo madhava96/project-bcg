@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOTEL BOOKING</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .container {
+            max-width: 80%;
+            margin: auto;
+            text-align: center;
+        }
+        header {
+            height: 8vh;
+            background: blue;
+        }
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:10px;
+            
+        }
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+            background-color: #fff;
+        }
+        header ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header ul li {
+            margin-left: 3rem;
+        }
+        header ul li a{
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: white;
+            transition: 0.5s;
+        }
+        header ul li a:hover {
+            color: #C18086;
+
+        }
+        @media only screen and (max-width:768px) {
+
+            headerul{
+                display: block;
+                position: fixed;
+                left: -100%;
+                top:5rem;
+                flex-direction: column;
+                background-color: #fff;
+                width: 100%;
+                border-radius: 10px;
+                text-align: center;
+                transition: 0.5s;
+                box-shadow: 0 10px 27px rgba(0,0,0,0);
+                z-index: 20;
+            }
+        }
+        header ul.active {
+            left: 0%;
+        }
+        header ul li {
+            margin: 2.5pem 0;
+        }
+        header ul li a{
+            color: rgb(0, 183, 255);
+        }
+        .hambuger {
+            display: block;
+            cursor: pointer;
+        }
+        .hambuger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .hambuger.active .bar:nth-child(1) {
+            transform: translateY(-8px) rotate(-45deg) ;
+        }
+        .flex {
+            display: flex;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 30px ;
+        }
+        .book{
+            margin-top: 4%;
+            width: 100%;
+            height: 20vh;
+            color: rgb(255, 255, 255);
+        }
+        .book .input {
+            background:#242e5a;
+            padding: 20px 20px 20px 20px;
+        }
+        .book .search {
+            background: #3f9cc1;
+            padding: 20px;
+        }
+        input{
+            width: 100%;
+            padding: 15px;
+            border: 2px solid rgba(255,255,255,0.1);
+            outline: none;
+            background: #263760;
+            margin-top: 20px;
+            color: white;
+        }
+        ::placeholder{
+            color: white;
+        }
+        .book .search{
+            width: 20;
+        }
+        .book .search input{
+            background: none;
+            border: none;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header" id="navigation-menu">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo"><img src="" alt=""></a>
+
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#rooms" class="nav-link">Rooms</a></li>
+                    <li><a href="#restaurant" class="nav-link">Restaurant</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+
+                <div class="hambuger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                
+                </div>
+            </nav>
+        </div>
+        <section class ="book">
+            <div class="container flex">
+                <div class="input grid">
+                    <div class="box">
+                        <label>Check-in:</label>
+                        <input type="date" placeholder="Check-in-Date">
+
+                    </div>
+                    <div class="box">
+                        <label>Check-out:</label>
+                        <input type="date" placeholder="Check-out-Date">
+                        
+                    </div>
+                    <div class="box">
+                        <label>Adults:</label><br>
+                        <input type="number" placeholder="0">
+                        
+                    </div>
+                    <div class="box">
+                        <label>Children:</label><br>
+                        <input type="number" placeholder="0">
+                        
+                    </div>
+                    
+                    </div>
+                    <div class="search">
+                        <input type="submit" value="SEARCH">
+                </div>
+            </div>
+        </section>
+        
+    </header>
+    <script>
+        const hambuger = document.querySelector('.hambuger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hambuger.addEventListener("click",mobileMenu);
+
+        function mobileMenu() {
+            hambuger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink =document.querySelectorAll('.nav-link');
+        navLink.forEach((n) => n.addEventListener("click", closemenu));
+
+        function closemenu() {
+            hambuger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% include 'cdnlines.html' %}  <!--bootstrap cdnlines-->
+        <style>
+           body{
+          
+            background-repeat:no-repeat;
+            background-size:cover;
+           }
+          
+            h1{
+        color: black;
+        
+        
+        text-align: center;
+        }
+        td{padding:10px;}
+      
+        
+
+            
+        </style>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  
+          <!-- Links -->
+          
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'managerhomepage' %}" style="color:white">Back</a>
+            </li>
+        
+          </ul>
+        
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logoutpage' %}" style="color:white" target="_blank">Logout</a>
+            </li>
+            
+          </ul>
+        </nav>
+        
+    </head>
+    
+    <body>
+      
+      <u><h1>Stock DETAILS</h1></u>
+      <!--fetching data from database in table format-->
+        <center><table border="1px" id="myTable">
+            <thead class="bg-success" id="w">
+                <tr>
+                  
+                    <th>medicine</th>
+                    <th>quantity</th>
+                    <th>price</th>
+                    </tr>
+            </thead>
+            <tbody  id="w">
+                {% if stockdat %} {% for i in stockdat %}
+                <tr>
+                  <!--getting the table body data from model-->
+                    <td>{{i.medicine}}</td>
+                    <td>{{i.quantity}}</td>
+                    <td>{{i.price}}</td>
+                    
+                </tr>
+                {% endfor %} {% endif %}
+
+            </tbody>
+        </table></center>
+ 
+      
+    <nav aria-label="...">
+      {% if stockdat.has_other_pages %}
+        <ul class="pagination">
+          {% if stockdat.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page={{ stockdat.previous_page_number }}">Previous</a></li>
+          {% else %}
+            <li class="page-item disabled"><span class="page-link">Previous</span></li>
+          {% endif %}
+ 
+          {% for i in stockdat.paginator.page_range %}
+            {% if stockdat.number == i %}
+            <li class="page-item active" aria-current="page"><a class="page-link" href="#">{{ i }}</a></li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %}
+          {% endfor %}
+ 
+          {% if stockdat.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ stockdat.next_page_number }}"></a></li>
+          {% else %}
+           
+          {% endif %}
+        </ul>
+      {% endif %}
+      </nav>
+
+    
+</html>

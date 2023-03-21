@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roombooking</title>
+    <style>
+ *{
+    font-family: 'poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+        }
+   body{background-image: url("hotel.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;}     
+        
+    html{
+        font-size: 62.5%;
+        overflow-x: hidden;
+    }
+    .btn{
+        display:inline-block;
+        margin-top: 1rem;
+        padding: 1rem 3rem;
+        border-radius: .5rem;
+        background: var(--primary);
+        color: rgb(32, 2, 2);
+        font-size: 1.7rem;
+        cursor: pointer;
+    }
+    .btn:hover{
+        background: rgb(164, 164, 172);
+    }
+    
+    .header{
+        position: fixed;
+        top:0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background:#347deb;
+        box-shadow: black;
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        padding: 0.5rem 9%;
+    }
+    .header .navbar a{
+        font-size: 1.7rem;
+        color: black;
+        margin: 0 1rem;
+    }
+    .header .navbar a:hover{
+        color: white;
+    }
+    .header .navbar .btn{
+        margin-top: 0;
+        color: #eee;
+    }
+        
+        
+        
+        
+        section{
+            padding: 5rem 7%;
+        }
+        .availability form{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            background: #eee;
+            padding: 2rem;
+            border-radius: .5rem;
+            
+        }
+        .availability form .box{
+            flex:1 1 20rem;
+            
+        }
+        .availability form .box p{
+            font-size: 2rem;
+            color: rgb(18, 1, 1);
+            
+        }
+        .availability form .box .input{
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.8rem;
+            color: rgb(21, 4, 4);
+            margin: 1rem 0;
+            border-radius: .5rem;
+            
+        }
+        .logo{
+            position: fixed;
+            height: auto;
+            left: 0;
+            width: 50px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    
+    <header class="header">
+        
+        <img src="{% static "/images/LOGO1.png" %}" class="logo">
+            <nav class="navbar">
+                <a href="file:///C:/Users/ok/Desktop/ziptak/New%20folder/HOTEL%20BOOKING.html">Home</a>
+                <a href="file:///C:/Users/ok/Desktop/ziptak/New%20folder/HOTEL%20ABOUT.html">About</a>
+                
+                <a href="file:///C:/Users/ok/Desktop/ziptak/New%20folder/HOTEL%20ROOMS.html">Rooms</a>
+                
+                <a href="#reservation" class="btn">Book now</a>
+            </nav>
+            <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+
+    <section class="availability">
+        <form action="">
+            <div class="box">
+                <p>Check in<span>*</span></p>
+                <input type="date" class="input">
+            </div>
+            <div class="box">
+                <p>Check out<span>*</span></p>
+                <input type="date" class="input">
+            </div>
+            <div class="box">
+                <p>Adults<span>*</span></p>
+                <select name="adults" id="" class="input">
+                    <option value="1">--Select--</option>
+                    <option value="2">1 adults</option>
+                    <option value="3">2 adults</option>
+                    <option value="4">3 adults</option>
+                    <option value="5">4 adults</option>
+                    <option value="6">5 adults</option>
+                    <option value="7">6 adults</option>
+
+                
+                </select>
+            </div>
+            <div class="box">
+                <p>Child<span>*</span></p>
+                <select name="Child" id="" class="input">
+                    <option value="1">--Select--</option>
+                    <option value="2">1 Child</option>
+                    <option value="3">2 Child</option>
+                    <option value="4">3 Child</option>
+                    <option value="5">4 Child</option>
+                    <option value="6">5 Child</option>
+                    <option value="7">6 Child</option>
+                    </select>
+                    </div>
+                    <div class="box">
+                        <p>Rooms<span>*</span></p>
+                        <select name="Rooms" id="" class="input">
+                            
+                            <option value="1">--Select--</option>
+                            <option value="2">Single(AC)</option>
+                            <option value="3">Double(AC)</option>
+                            <option value="4">Suite(AC)</option>
+                            <option value="6">Single(NON-AC)</option>
+                            <option value="7">Double(NON-AC)</option>
+                            <option value="8">Suite(NON-AC)</option>
+                            
+                            </select>
+                            </div>
+                   
+                   
+                            <input type="submit" value="check availability" class="btn">
+                            
+        </form>
+    </section>
+</header>
+<script>
+    
+</script>
+    
+</body>
+</html>
