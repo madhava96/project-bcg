@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>piechart</title>
+        <style type="text/css">
+           .main_div{
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .pie-chart{
+                background: radial-gradient(circle closest-side , transparent 100%, #FFFFE0 0),
+                Conic-gradient(
+                    from 180deg,
+                    #ee5253 0, 
+                    #ee5253 35%,
+                    #ff9f43 0,
+                    #ff9f43 60%,
+                    #2f27cd 0,
+                    #2f27cd 75%,
+                    #2e86de 0,
+                    #2e86de 89%,
+                    #10ac84 0,
+                    #10ac84 100%
+                    
+                 );
+                 
+                min-width: 150px;
+                min-height: 250px;
+                
+            }
+            
+           .center_div{
+                width: calc(100vw - 40vw);
+                height: calc(100vh - 30vh);
+                border: 1px solid #000;
+                position: relative;
+                background-color: #FFFFE0;
+            }
+            .center_div h1{
+                padding: 20px 0 20px 20px;
+            }
+            .center_div p{
+                position: absolute;
+                top: 100px;
+                bottom: 100px;
+                
+                bottom:1rem;
+                left: 1rem;
+                font-size: 1.1rem;
+                text-align: right;
+            }
+            .center_div span::after{
+                content: "";
+                display: inline-block;
+                width: 0.6rem;
+                height: 0.6rem;
+                border-radius: 50%;
+                font-weight: 700px;
+                background:currentColor ;
+                margin: 0 0.5rem;
+            }
+            .center_div h2{
+                position: absolute;
+                bottom: 0;
+                padding: 1rem;
+                color: gray;
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main_div">
+           <div class="center_div">
+            <h1>India Top 5 States With High Covid Cases</h1>
+            <div class="pie-chart"></div>
+            
+            <p>
+                Maharastra 468265<span style="color:#ee5253 ;"></span><br>
+                TamilNadu 273460<span style="color: #ff9f43;"></span><br>
+                AndhraPradesh 186461 <span style="color: #5f27cd;"></span><br>
+                Karnakata 151449 <span style="color: #2e86de;"></span><br>
+                Delhi 140232 <span style="color: #10ac84;"></span><br>
+            </p>
+        
+            <h2>India covid cases till now</h2>
+           </div>
+        </div>
+    </body>
+</html>
