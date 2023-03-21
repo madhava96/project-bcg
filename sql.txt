@@ -1,0 +1,42 @@
+mysql> delete table sharma where S_No=6;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table sharma where S_No=6' at line 1
+mysql> delete sharma where S_No=6;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where S_No=6' at line 1
+mysql> alter table sharma drop column Age;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> table sharma;
++------+---------+------+
+| S_No | Name    | loc  |
++------+---------+------+
+|    1 | madhav  | HYD  |
+|    2 | kiran   | gnt  |
+|    3 | dik     | bza  |
+|    4 | deepthi | Sec  |
+|    5 | rajitha | ooty |
+|    6 | shreya  | rjy  |
++------+---------+------+
+6 rows in set (0.00 sec)
+
+mysql> create database BCG;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use BCG;
+Database changed
+mysql> create table task(EmployeeId int,EmployeeName varchar(50),Dateofjoin date,EmployeeSalary int,EmployeeDesignation varchar(55),PrevousExp varchar(50));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc task;
++---------------------+-------------+------+-----+---------+-------+
+| Field               | Type        | Null | Key | Default | Extra |
++---------------------+-------------+------+-----+---------+-------+
+| EmployeeId          | int         | YES  |     | NULL    |       |
+| EmployeeName        | varchar(50) | YES  |     | NULL    |       |
+| Dateofjoin          | date        | YES  |     | NULL    |       |
+| EmployeeSalary      | int         | YES  |     | NULL    |       |
+| EmployeeDesignation | varchar(55) | YES  |     | NULL    |       |
+| PrevousExp          | varchar(50) | YES  |     | NULL    |       |
++---------------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+

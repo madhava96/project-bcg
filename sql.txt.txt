@@ -1,0 +1,187 @@
+Enter password: ***********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 8.0.32 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| madhav             |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use madhav;
+Database changed
+mysql> show tables
+    -> show tables;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show tables' at line 2
+mysql> show tables;
++------------------+
+| Tables_in_madhav |
++------------------+
+| sharma           |
++------------------+
+1 row in set (0.01 sec)
+
+mysql> table sharma;
++------+--------+------+
+| S_No | Name   | Age  |
++------+--------+------+
+|    1 | madhav |   26 |
+|    2 | kiran  |   30 |
++------+--------+------+
+2 rows in set (0.00 sec)
+
+mysql> insert into sharma values(3,'dik',28);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into sharma values(3,'dik',28),(4,'deepthi',23),(5,'rajitha',23),(6,"shreya",22);
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> table sharma;
++------+---------+------+
+| S_No | Name    | Age  |
++------+---------+------+
+|    1 | madhav  |   26 |
+|    2 | kiran   |   30 |
+|    3 | dik     |   28 |
+|    3 | dik     |   28 |
+|    4 | deepthi |   23 |
+|    5 | rajitha |   23 |
+|    6 | shreya  |   22 |
++------+---------+------+
+7 rows in set (0.00 sec)
+
+mysql> delete from sharma where id=3;
+ERROR 1054 (42S22): Unknown column 'id' in 'where clause'
+mysql> delete from sharma where S_No=3;
+Query OK, 2 rows affected (0.01 sec)
+
+mysql> table sharma;
++------+---------+------+
+| S_No | Name    | Age  |
++------+---------+------+
+|    1 | madhav  |   26 |
+|    2 | kiran   |   30 |
+|    4 | deepthi |   23 |
+|    5 | rajitha |   23 |
+|    6 | shreya  |   22 |
++------+---------+------+
+5 rows in set (0.00 sec)
+
+mysql> insert into sharma values(3,'dik',28);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> table sharma;
++------+---------+------+
+| S_No | Name    | Age  |
++------+---------+------+
+|    1 | madhav  |   26 |
+|    2 | kiran   |   30 |
+|    4 | deepthi |   23 |
+|    5 | rajitha |   23 |
+|    6 | shreya  |   22 |
+|    3 | dik     |   28 |
++------+---------+------+
+6 rows in set (0.00 sec)
+
+mysql> alter table sharma order by S_No asc;
+Query OK, 6 rows affected (0.05 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> table sharma;
++------+---------+------+
+| S_No | Name    | Age  |
++------+---------+------+
+|    1 | madhav  |   26 |
+|    2 | kiran   |   30 |
+|    3 | dik     |   28 |
+|    4 | deepthi |   23 |
+|    5 | rajitha |   23 |
+|    6 | shreya  |   22 |
++------+---------+------+
+6 rows in set (0.00 sec)
+
+mysql> alter table sharma add column loc varchar(20);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> table sharma;
++------+---------+------+------+
+| S_No | Name    | Age  | loc  |
++------+---------+------+------+
+|    1 | madhav  |   26 | NULL |
+|    2 | kiran   |   30 | NULL |
+|    3 | dik     |   28 | NULL |
+|    4 | deepthi |   23 | NULL |
+|    5 | rajitha |   23 | NULL |
+|    6 | shreya  |   22 | NULL |
++------+---------+------+------+
+6 rows in set (0.00 sec)
+
+mysql> update table sharma set loc="HYD" where S_No=1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table sharma set loc="HYD" where S_No=1' at line 1
+mysql> update sharma set loc="HYD" where S_No=1;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> table sharma;
++------+---------+------+------+
+| S_No | Name    | Age  | loc  |
++------+---------+------+------+
+|    1 | madhav  |   26 | HYD  |
+|    2 | kiran   |   30 | NULL |
+|    3 | dik     |   28 | NULL |
+|    4 | deepthi |   23 | NULL |
+|    5 | rajitha |   23 | NULL |
+|    6 | shreya  |   22 | NULL |
++------+---------+------+------+
+6 rows in set (0.00 sec)
+
+mysql> update sharma set loc = case S_No when 2 then "gnt" when 3 then "bza" when 4 then "Sec" when 5 then "ooty" when 6 then "rjy" end where S_No in (2,3,4,5,6);
+Query OK, 5 rows affected (0.01 sec)
+Rows matched: 5  Changed: 5  Warnings: 0
+
+mysql> table sharma;
++------+---------+------+------+
+| S_No | Name    | Age  | loc  |
++------+---------+------+------+
+|    1 | madhav  |   26 | HYD  |
+|    2 | kiran   |   30 | gnt  |
+|    3 | dik     |   28 | bza  |
+|    4 | deepthi |   23 | Sec  |
+|    5 | rajitha |   23 | ooty |
+|    6 | shreya  |   22 | rjy  |
++------+---------+------+------+
+6 rows in set (0.00 sec)
+
+mysql> table sharma;
++------+---------+------+------+
+| S_No | Name    | Age  | loc  |
++------+---------+------+------+
+|    1 | madhav  |   26 | HYD  |
+|    2 | kiran   |   30 | gnt  |
+|    3 | dik     |   28 | bza  |
+|    4 | deepthi |   23 | Sec  |
+|    5 | rajitha |   23 | ooty |
+|    6 | shreya  |   22 | rjy  |
++------+---------+------+------+
+6 rows in set (0.00 sec)
+
+mysql> tee C:/Users/Madhava Sharma/Desktop/sql.txt
+Logging to file 'C:/Users/Madhava Sharma/Desktop/sql.txt'
+mysql>
